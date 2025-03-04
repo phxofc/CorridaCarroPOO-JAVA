@@ -11,7 +11,7 @@ public class Automovel{
 
     Random random = new Random();
 
-    public Automovel(int distancia_pecorrida, String marca_carro, String modelo_carro, String nome_piloto) {
+    public Automovel(String marca_carro, String modelo_carro, String nome_piloto) {
         this.distancia_pecorrida = distancia_pecorrida;
         this.marca_carro = marca_carro;
         this.modelo_carro = modelo_carro;
