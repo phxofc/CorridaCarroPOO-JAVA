@@ -1,13 +1,17 @@
 package model;
 
+import java.util.Random;
+
 public class Automovel{
 
     String nome_piloto;
     String marca_carro;
     String modelo_carro;
-    String distancia_pecorrida;
+    int distancia_pecorrida =0;
 
-    public Automovel(String distancia_pecorrida, String marca_carro, String modelo_carro, String nome_piloto) {
+    Random random = new Random();
+
+    public Automovel(int distancia_pecorrida, String marca_carro, String modelo_carro, String nome_piloto) {
         this.distancia_pecorrida = distancia_pecorrida;
         this.marca_carro = marca_carro;
         this.modelo_carro = modelo_carro;
@@ -17,43 +21,51 @@ public class Automovel{
     public Automovel() {
     }
 
+
+
+public void imprimeCarro() {
+        int numeroSorteado = random.nextInt(3) + 1;
+
+        distancia_pecorrida += numeroSorteado;
+
+        String espacoSoma = " ".repeat(distancia_pecorrida);
+
+        System.out.print(
+                espacoSoma + "       _______      \n" +
+                        espacoSoma + "     //  ||\\ \\     \n" +
+                        espacoSoma + " ___//___||_\\ \\___ \n" +
+                        espacoSoma + "|    _ " + nome_piloto + "     _  )\n" +
+                        espacoSoma + "|___/ \\________/ \\_|\n" +
+                        espacoSoma + "    \\_/        \\_/   \n"
+        );
+
+        System.out.println(" ");
+    }
+
+public static void imprimirBarreira() {
+        System.out.println("============================================================================================================================================X");
+    }
+
+
+  public void imprimeDistancia() {
+        System.out.println(nome_piloto + " - " + marca_carro + " " + modelo_carro + " | distancia percorrida: " + distancia_pecorrida);
+    }
+
+
+
+
+
+
     public String getNome_piloto() {
         return nome_piloto;
     }
 
-    public void setNome_piloto(String nome_piloto) {
-        this.nome_piloto = nome_piloto;
-    }
-
-    public String getMarca_carro() {
-        return marca_carro;
-    }
-
-    public void setMarca_carro(String marca_carro) {
-        this.marca_carro = marca_carro;
-    }
-
-    public String getModelo_carro() {
-        return modelo_carro;
-    }
-
-    public void setModelo_carro(String modelo_carro) {
-        this.modelo_carro = modelo_carro;
-    }
-
-    public String getDistancia_pecorrida() {
+    public int getDistancia_pecorrida() {
         return distancia_pecorrida;
     }
 
-    public void setDistancia_pecorrida(String distancia_pecorrida) {
-        this.distancia_pecorrida = distancia_pecorrida;
-    }
-    
 
-    public void imprimirInfos(){
-        System.out.println("Marca: "+ marca_carro);
-        System.out.println("Piloto: "+ nome_piloto);
 
-    }
-    
+
+  
 }
